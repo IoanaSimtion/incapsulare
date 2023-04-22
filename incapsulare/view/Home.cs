@@ -31,9 +31,28 @@ namespace incapsulare.view
 
         }
 
-        private void lstMasini_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnAddCar_Click(object sender, EventArgs e)
+        {
+            Car frmnCar = new Car(this.masinaService);
+
+            if(frmnCar.ShowDialog() == DialogResult.OK)
+            {
+
+                this.masinaService.showTabel(lstMasini);
+            }
+         }
+
+        private void btnUpdateCar_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("Select a car", "Update", MessageBoxButtons.OK);
+            
+        }
+
+        private void btnShow_Click(object sender, EventArgs e)
         {
 
+            MessageBox.Show(lstMasini.SelectedItems.ToString());
+           
         }
     }
 }

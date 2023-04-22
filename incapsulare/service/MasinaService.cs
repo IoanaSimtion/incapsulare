@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace incapsulare.service
 {
-    internal class MasinaService
+    public class MasinaService
     {
 
         private List<Masina> masini;
@@ -35,6 +35,10 @@ namespace incapsulare.service
 
         }
 
+        public void addCar(Masina car)
+        {
+            this.masini.Add(car);
+        }
 
        
         public void showTabel(ListView tabel)

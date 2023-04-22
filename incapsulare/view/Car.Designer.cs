@@ -44,16 +44,18 @@
             this.txtStare = new System.Windows.Forms.TextBox();
             this.txtViteze = new System.Windows.Forms.TextBox();
             this.txtVechime = new System.Windows.Forms.TextBox();
+            this.lblID = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnMasina
             // 
-            this.btnMasina.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMasina.Location = new System.Drawing.Point(647, 361);
+            this.btnMasina.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnMasina.Location = new System.Drawing.Point(678, 414);
             this.btnMasina.Name = "btnMasina";
-            this.btnMasina.Size = new System.Drawing.Size(141, 77);
+            this.btnMasina.Size = new System.Drawing.Size(114, 48);
             this.btnMasina.TabIndex = 0;
-            this.btnMasina.Text = "Apasati pentru a afisa proprietatile masinii";
+            this.btnMasina.Text = "Add car";
             this.btnMasina.UseVisualStyleBackColor = true;
             this.btnMasina.Click += new System.EventHandler(this.btnMasina_Click);
             // 
@@ -130,12 +132,12 @@
             // lblMasina
             // 
             this.lblMasina.AutoSize = true;
-            this.lblMasina.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMasina.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMasina.Location = new System.Drawing.Point(312, 25);
             this.lblMasina.Name = "lblMasina";
-            this.lblMasina.Size = new System.Drawing.Size(105, 38);
+            this.lblMasina.Size = new System.Drawing.Size(150, 39);
             this.lblMasina.TabIndex = 8;
-            this.lblMasina.Text = "Masina";
+            this.lblMasina.Text = "New Car";
             // 
             // txtMarca
             // 
@@ -189,11 +191,30 @@
             this.txtVechime.Size = new System.Drawing.Size(83, 27);
             this.txtVechime.TabIndex = 15;
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblID.Location = new System.Drawing.Point(15, 399);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(35, 28);
+            this.lblID.TabIndex = 16;
+            this.lblID.Text = "ID:";
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(56, 400);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(125, 27);
+            this.txtID.TabIndex = 17;
+            // 
             // Car
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(804, 474);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.lblID);
             this.Controls.Add(this.txtVechime);
             this.Controls.Add(this.txtViteze);
             this.Controls.Add(this.txtStare);
@@ -236,5 +257,7 @@
         private TextBox txtStare;
         private TextBox txtViteze;
         private TextBox txtVechime;
+        private Label lblID;
+        private TextBox txtID;
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace incapsulare.model
 {
-    internal class Masina
+    public class Masina
     {
         //todo :5 proprietati
         private string marca;
@@ -17,6 +17,12 @@ namespace incapsulare.model
         private string vechime;
         private string stare;
         private string cutieViteze;
+
+
+        public Masina()
+        {
+
+        }
 
         public Masina(string marca,string model, int an, double pret, string id, string vechime, string stare, string cutieViteze)
         {
