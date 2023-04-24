@@ -74,7 +74,7 @@
             this.btnUpdateCar.Name = "btnUpdateCar";
             this.btnUpdateCar.Size = new System.Drawing.Size(192, 47);
             this.btnUpdateCar.TabIndex = 3;
-            this.btnUpdateCar.Text = "Update existing car";
+            this.btnUpdateCar.Text = "Update car";
             this.btnUpdateCar.UseVisualStyleBackColor = true;
             this.btnUpdateCar.Click += new System.EventHandler(this.btnUpdateCar_Click);
             // 

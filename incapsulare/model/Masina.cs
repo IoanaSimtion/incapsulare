@@ -135,5 +135,8 @@ namespace incapsulare.model
         {
             return this.cutieViteze;
         }
+
+
+
     }
 }

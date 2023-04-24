@@ -45,6 +45,8 @@ namespace incapsulare.service
             this.masini.Add(n);
             this.masini.Add(o);
 
+            //MessageBox.Show(getPoz("sfOI32").ToString(), "masina");
+
         }
 
         public void addCar(Masina car)
@@ -83,6 +85,34 @@ namespace incapsulare.service
         }
 
 
+        //todo:functie ce primeste ca parametru id unei masini si returneaza pozitia pe care se afla
 
+
+        public int getPoz(String id)
+        {
+            int i = 0;
+            foreach(Masina masina in masini)
+            {
+                if (masina.getID().Equals(id))
+                {
+                    return i;
+                }
+                i++;
+            }
+            return -1;
+        }
+
+
+
+        public void deleteCar(String id)
+        {
+            int index=getPoz(id);
+
+            this.masini.RemoveAt(index);                       
+        }
+
+
+
+       
     }
 }
