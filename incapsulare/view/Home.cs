@@ -44,15 +44,30 @@ namespace incapsulare.view
 
         private void btnUpdateCar_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("Select a car", "Update", MessageBoxButtons.OK);
+
+            MessageBox.Show("Select the car ID", "Update", MessageBoxButtons.OK);
+
             
         }
 
-        private void btnShow_Click(object sender, EventArgs e)
-        {
 
-            MessageBox.Show(lstMasini.SelectedItems.ToString());
-           
+        private void lstMasini_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("aici");
+
+
+            string id = lstMasini.SelectedItems[0].Text;
+
+
+            UpdateCar update = new UpdateCar(masinaService, id);
+
+
+            if (update.ShowDialog() == DialogResult.OK)
+            {
+                masinaService.showTabel(lstMasini);
+            }
+
+
         }
     }
 }

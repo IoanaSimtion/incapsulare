@@ -32,7 +32,6 @@
             this.btnAddCar = new System.Windows.Forms.Button();
             this.lblCars = new System.Windows.Forms.Label();
             this.btnUpdateCar = new System.Windows.Forms.Button();
-            this.btnShow = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstMasini
@@ -45,7 +44,7 @@
             this.lstMasini.TabIndex = 0;
             this.lstMasini.UseCompatibleStateImageBehavior = false;
             this.lstMasini.View = System.Windows.Forms.View.Details;
-            this.lstMasini.SelectedIndexChanged += new System.EventHandler(this.btnUpdateCar_Click);
+            this.lstMasini.SelectedIndexChanged += new System.EventHandler(this.lstMasini_SelectedIndexChanged);
             // 
             // btnAddCar
             // 
@@ -79,23 +78,11 @@
             this.btnUpdateCar.UseVisualStyleBackColor = true;
             this.btnUpdateCar.Click += new System.EventHandler(this.btnUpdateCar_Click);
             // 
-            // btnShow
-            // 
-            this.btnShow.Location = new System.Drawing.Point(439, 463);
-            this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(94, 29);
-            this.btnShow.TabIndex = 4;
-            this.btnShow.Text = "Show car";
-            this.btnShow.UseVisualStyleBackColor = true;
-            this.btnShow.Visible = false;
-            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(999, 527);
-            this.Controls.Add(this.btnShow);
             this.Controls.Add(this.btnUpdateCar);
             this.Controls.Add(this.lblCars);
             this.Controls.Add(this.btnAddCar);
@@ -114,6 +101,5 @@
         private Button btnAddCar;
         private Label lblCars;
         private Button btnUpdateCar;
-        private Button btnShow;
     }
 }

@@ -24,7 +24,7 @@ namespace incapsulare.model
 
         }
 
-        public Masina(string marca,string model, int an, double pret, string id, string vechime, string stare, string cutieViteze)
+        public Masina(string id, string marca,string model, int an, double pret, string vechime, string stare, string cutieViteze)
         {
             this.marca = marca;
             this.model = model;

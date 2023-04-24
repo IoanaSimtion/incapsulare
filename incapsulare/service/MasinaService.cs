@@ -12,7 +12,19 @@ namespace incapsulare.service
 
         private List<Masina> masini;
 
+        public Masina getMasina(String id)
+        {
+            foreach (Masina masina in masini)
+            {
+                if (masina.getID().Equals(id))
+                {
+                    return masina;
+                }
+            }
 
+            return null;
+            
+        }
 
         public MasinaService()
         {
@@ -25,9 +37,9 @@ namespace incapsulare.service
 
         public void load()
         {
-            Masina m = new Masina("ford", "mustang", 2000, 12341, "wri123r", "noua", "intacta", "manuala");
-            Masina n = new Masina("honda", "prelude", 1994, 134533, "sfOI32", "veche", "uzata", "manuala");
-            Masina o = new Masina("pontiac", "trans am", 2001, 42124, "nIO94", "veche", "intacta", "automana");
+            Masina m = new Masina("wri123r", "ford", "mustang", 2000, 12341, "noua", "intacta", "manuala");
+            Masina n = new Masina("sfOI32", "honda", "prelude", 1994, 134533, "veche", "uzata", "manuala");
+            Masina o = new Masina("nIO94", "pontiac", "trans am", 2001, 42124, "veche", "intacta", "automana");
 
             this.masini.Add(m);
             this.masini.Add(n);
@@ -45,11 +57,11 @@ namespace incapsulare.service
         {
 
             tabel.Clear();
+            tabel.Columns.Add("ID", 75, HorizontalAlignment.Left);
             tabel.Columns.Add("Marca", 75, HorizontalAlignment.Left);
             tabel.Columns.Add("Model", 100, HorizontalAlignment.Left);
             tabel.Columns.Add("An", 75, HorizontalAlignment.Left);
-            tabel.Columns.Add("Pret", 100, HorizontalAlignment.Left);
-            tabel.Columns.Add("ID", 75, HorizontalAlignment.Left);
+            tabel.Columns.Add("Pret", 100, HorizontalAlignment.Left);           
             tabel.Columns.Add("Vechime", 100, HorizontalAlignment.Left);
             tabel.Columns.Add("Stare", 75, HorizontalAlignment.Left);
             tabel.Columns.Add("Cutie de viteze", 100, HorizontalAlignment.Left);
@@ -57,11 +69,11 @@ namespace incapsulare.service
             foreach (Masina masina in masini)
             {
                 ListViewItem linie = new ListViewItem();
-                linie.Text = masina.getMarca();
+                linie.Text = masina.getID();
+                linie.SubItems.Add(masina.getMarca().ToString());
                 linie.SubItems.Add(masina.getModel());
                 linie.SubItems.Add(masina.getAn().ToString());
                 linie.SubItems.Add(masina.getPret().ToString());
-                linie.SubItems.Add(masina.getID().ToString());
                 linie.SubItems.Add(masina.getVechime());
                 linie.SubItems.Add(masina.getStare());
                 linie.SubItems.Add(masina.getCutieViteze());
