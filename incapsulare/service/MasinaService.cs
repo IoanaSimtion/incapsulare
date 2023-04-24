@@ -11,6 +11,7 @@ namespace incapsulare.service
     {
 
         private List<Masina> masini;
+        private string path = Application.StartupPath + @"\data\masini.txt";
 
         public Masina getMasina(String id)
         {
@@ -37,15 +38,20 @@ namespace incapsulare.service
 
         public void load()
         {
-            Masina m = new Masina("wri123r", "ford", "mustang", 2000, 12341, "noua", "intacta", "manuala");
-            Masina n = new Masina("sfOI32", "honda", "prelude", 1994, 134533, "veche", "uzata", "manuala");
-            Masina o = new Masina("nIO94", "pontiac", "trans am", 2001, 42124, "veche", "intacta", "automana");
 
-            this.masini.Add(m);
-            this.masini.Add(n);
-            this.masini.Add(o);
+                  
 
-            //MessageBox.Show(getPoz("sfOI32").ToString(), "masina");
+            StreamReader streamReader = new StreamReader(path);
+            string line = "";
+            while ((line =streamReader.ReadLine())!= null){
+
+                Masina masina = new Masina(line);
+
+                masini.Add(masina);
+
+            }
+
+            streamReader.Close();
 
         }
 
@@ -112,7 +118,30 @@ namespace incapsulare.service
         }
 
 
+        public string toSave()
+        {
 
+            string text = "";
+            int i = 0;
+            for (i = 0; i < masini.Count - 1; i++)
+            {
+
+                text += masini[i].toSave() + "\n";
+
+            }
+            text += masini[i].toSave();
+            return text;
+        }
+
+        public void save()
+        {
+            StreamWriter writer = new StreamWriter(path);
+
+
+            writer.WriteLine(toSave());
+
+            writer.Close();
+        }
        
     }
 }

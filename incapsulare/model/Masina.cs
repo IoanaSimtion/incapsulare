@@ -37,6 +37,21 @@ namespace incapsulare.model
         }
 
 
+        public Masina(string proprietati)
+        {
+            string[] propr = proprietati.Split(",");
+
+            this.id = propr[0];
+            this.marca = propr[1];
+            this.model = propr[2];
+            this.an = Int32.Parse(propr[3]);
+            this.pret = Double.Parse(propr[4]);
+            this.vechime = propr[5];
+            this.stare = propr[6];
+            this.cutieViteze = propr[7];
+
+        }
+
         public string descriere()
         {
             string text = "";
@@ -136,7 +151,22 @@ namespace incapsulare.model
             return this.cutieViteze;
         }
 
+        public string toSave()
+        {
+            string carData = "";
 
+            carData += this.id + ",";
+            carData += this.marca + ",";
+            carData += this.model + ",";
+            carData += this.an + ",";
+            carData += this.pret + ",";
+            carData += this.vechime + ",";
+            carData += this.stare + ",";
+            carData += this.cutieViteze;
+           
+
+            return carData;
+        }
 
     }
 }

@@ -53,6 +53,8 @@ namespace incapsulare.view
                 if (update.ShowDialog() == DialogResult.OK)
                 {
                     masinaService.showTabel(lstMasini);
+
+                    masinaService.save();
                 }
             }
             else

@@ -17,6 +17,8 @@ namespace incapsulare
             //Application.Run(new Car());
             Application.Run(new Home());
 
+
+
             //crearea de obiecte
 
 
@@ -36,7 +38,9 @@ namespace incapsulare
             //masinas
 
 
+            //Masina m = new Masina("wri123r,ford,mustang,2000,12341,noua,intacta,manuala");
 
+            //MessageBox.Show(m.toSave());
 
 
 

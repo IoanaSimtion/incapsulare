@@ -66,6 +66,7 @@ namespace incapsulare.view
                 this.forUpdateMasina.setModel(txtModelUp.Text);
 
                 this.DialogResult = DialogResult.OK;
+
             }
         }
 
@@ -123,6 +124,7 @@ namespace incapsulare.view
             this.masinaService.deleteCar(forUpdateMasina.getID());
 
             this.DialogResult = DialogResult.OK;
+
         }
     }
 }
