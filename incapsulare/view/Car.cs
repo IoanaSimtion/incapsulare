@@ -1,4 +1,6 @@
-﻿using System;
+﻿using incapsulare.model;
+using incapsulare.service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,28 +14,44 @@ namespace incapsulare.view
 {
     public partial class Car : Form
     {
+
+        private MasinaService masinaService;
         public Car()
         {
             InitializeComponent();
         }
 
+
+        public Car(MasinaService masinaService)
+        {
+            InitializeComponent();
+            this.masinaService = masinaService;
+        }
         private void Car_Load(object sender, EventArgs e)
         {
 
         }
 
+
         private void btnMasina_Click(object sender, EventArgs e)
         {
-            string text = "";
-            text += "Marca masinii este " + txtMarca.Text + "\n";
-            text += "Modelul masinii este " + txtModel.Text + "\n";
-            text += "Anul de fabricatie este " + txtAn.Text + "\n";
-            text += "Pretul masinii este " + txtPret.Text + "\n";
-            text += "Masina este " + txtVechime.Text + "\n";
-            text += "Masina este " + txtStare.Text + "\n";
-            text += "Cutia de viteze este " + txtViteze.Text + "\n";
 
-            MessageBox.Show(text, "Descriere", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Masina car = new Masina();
+
+            car.setMarca(txtMarca.Text);
+            car.setModel(txtModel.Text);
+            car.setAn(Int32.Parse(txtAn.Text));
+            car.setPret(Double.Parse(txtPret.Text));
+            car.setID(txtID.Text);
+            car.setVechime(txtVechime.Text);
+            car.setStare(txtStare.Text);
+            car.setCutieViteze(txtViteze.Text);
+
+
+            this.masinaService.addCar(car);
+
+            this.DialogResult = DialogResult.OK;
+            
 
         }
 
